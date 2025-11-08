@@ -1,0 +1,35 @@
+<h2>{{ currentLang == 'ar' ? "قائمة دوراتنا" : "Our Courses List" }}</h2>
+<h3 class="title">{{ currentLang == 'ar' ? "الدورات الشائعة" : "Popular Courses" }}</h3>
+
+<!-- عرض رسالة في حال عدم وجود دورات -->
+<div *ngIf="services.length === 0" class="no-courses-card">
+  <div class="no-courses-content">
+    <h3>🎉 {{ currentLang == 'ar' ? "لا توجد دورات متاحة حالياً" : "No Courses Available Yet" }}</h3>
+    <p>
+      {{ currentLang == 'ar'
+        ? "هذه الميزة سيتم تفعيلها قريبًا إن شاء الله. تابعنا للمزيد."
+        : "This feature will be available soon, Insha'Allah. Stay tuned for updates." }}
+    </p>
+  </div>
+</div>
+
+<!-- ✅ عرض دورة واحدة فقط كل 3 ثوانٍ -->
+<div *ngIf="services.length > 0" class="services-container">
+  <div class="service-details" *ngIf="currentCourse">
+    <h3 class="course-name">
+      {{ currentLang == 'ar' ? currentCourse.courseNameAr : currentCourse.courseNameEn }}
+    </h3>
+
+    <!-- <p class="lessons-hours">
+      {{ currentLang == 'ar' ? "الدروس:" : "Lessons:" }} {{ currentCourse.lessons || 0 }} |
+      {{ currentLang == 'ar' ? "الساعات:" : "Hours:" }} {{ currentCourse.hours || 0 }}
+    </p>
+
+    <p class="instructor">
+      {{ currentLang == 'ar' ? "المدرب:" : "Instructor:" }}
+      {{ currentLang == 'ar' ? currentCourse.instructorAr || '' : currentCourse.instructorEn || '' }}
+    </p>
+
+    <img [src]="currentCourse.image" alt="Course image" class="course-image" /> -->
+  </div>
+</div>

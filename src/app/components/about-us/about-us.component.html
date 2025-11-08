@@ -1,0 +1,33 @@
+<section class="about-us-section d-flex align-items-center justify-content-center text-center text-white min-vh-100">
+  <div class="slider w-100" data-animate>
+    <div *ngFor="let slide of slides; let i = index"
+         class="slide" data-animate
+         [class.active]="currentSlide === i"
+         [style.backgroundImage]="'url(' + slide + ')'">
+    </div>
+    <div class="overlay" data-animate></div>
+  </div>
+
+  <div class="container position-relative z-2 px-3 px-md-4" data-animate>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8" data-animate>
+        <h2 class="fw-bold fs-5 mb-4 mt-5" data-animate>
+        {{ currentLang === 'ar' ? sectionTitle.ar : sectionTitle.en   }}
+        </h2>
+        <p class="lead mb-4 fs-6 fs-md-5" data-animate>
+          {{ currentLang === 'ar' ? description.ar : description.en   }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination" data-animate>
+    <span *ngFor="let slide of slides; let i = index"
+          class="dot" data-animate
+          [class.active]="currentSlide === i"
+          (click)="setCurrentSlide(i)">
+    </span>
+  </div>
+</section>
+
+<app-slider appAppInViewport animationClass="fade-from-bottom"></app-slider>

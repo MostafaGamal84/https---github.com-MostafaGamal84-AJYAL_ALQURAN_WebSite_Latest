@@ -1,0 +1,10 @@
+<div class="fixed-buttons">
+  <button *ngIf="showButton" class="back-to-top-btn" (click)="scrollToTop()">
+    ↑
+  </button>
+  <a href="https://wa.me/+201099381081" target="_blank" class="whatsapp-btn" aria-label="تواصل معنا عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button    (click)="playAudio()" class="play-btn"> {{ isPlaying ? '⏸️' : '🎵' }}</button>
+  
+</div>

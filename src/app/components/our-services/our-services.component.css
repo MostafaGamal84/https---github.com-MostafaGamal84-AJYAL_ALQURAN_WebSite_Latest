@@ -1,0 +1,301 @@
+/* =====================
+   Base Styles
+   ===================== */
+   .services-section {
+    background-color: #f8f9fa;
+    font-family: "SuisseIntl", sans-serif;
+  }
+
+  
+  
+ .services-container {
+  display: flex;
+  justify-content: center;  /* يجعل العنصر في منتصف العرض */
+  align-items: center;      /* يجعله في منتصف الارتفاع إذا كان مطلوبًا */
+  padding: 20px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+  
+  h2,
+  h3.title {
+    text-align: center;
+    /* color: #0d5ff9; */
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  h3.title {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  /* =====================
+     Service Card
+     ===================== */
+  .service-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* =====================
+     Service Details
+     ===================== */
+  .service-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    width: 457px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .course-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .course-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  
+  .students-count,
+  .lessons-hours,
+  .instructor {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 6px 0;
+    text-align: center;
+  }
+  
+  /* =====================
+     Instructor List (Arabic)
+     ===================== */
+  .instructors-arabic ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+  }
+  
+  .instructors-arabic li {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+  }
+  
+  /* =====================
+     Icon Section
+     ===================== */
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background: #f0f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-wrapper i {
+    font-size: 2rem;
+    color: #0d6efd;
+  }
+  
+  .service-title {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .service-description {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* =====================
+     RTL Support
+     ===================== */
+  .services-container.rtl {
+    direction: rtl;
+  }
+  
+  .services-container.rtl .service-details,
+  .services-container.rtl .course-name,
+  .services-container.rtl .students-count,
+  .services-container.rtl .lessons-hours,
+  .services-container.rtl .instructor {
+    text-align: right;
+  }
+ .no-courses-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  max-width: 600px;
+  flex-direction: column;
+}
+
+.no-courses-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-courses-image {
+  width: 150px;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+.no-courses-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.no-courses-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+  /* =====================
+     Responsive Design
+     ===================== */
+  @media (max-width: 992px) {
+    .service-details {
+      width: calc(50% - 20px);
+    }
+  
+    h2,
+    h3.title {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .service-details {
+      width: 100%;
+    }
+  
+    h2,
+    h3.title {
+      font-size: 16px;
+    }
+  
+    .course-name {
+      font-size: 14px;
+    }
+  
+    .students-count,
+    .lessons-hours,
+    .instructor {
+      font-size: 12px;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .section-description {
+      font-size: 1rem;
+    }
+  
+    .icon-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .icon-wrapper i {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .services-container {
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+  
+    .service-details {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    h2,
+    h3.title {
+      font-size: 14px;
+    }
+  
+    .course-name {
+      font-size: 12px;
+    }
+  
+    .students-count,
+    .lessons-hours,
+    .instructor {
+      font-size: 10px;
+    }
+  
+    .section-title {
+      font-size: 1.75rem;
+    }
+  
+    .course-image {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .service-card {
+      margin-bottom: 1rem;
+    }
+  }
+  

@@ -1,0 +1,23 @@
+<h2 class="section-title text-center">
+  {{ currentLang === 'ar' ? 'الأقسام' : 'Sections' }}
+</h2>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let package of packages">
+      <div class="package-item" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
+        <h3 class="package-title">
+          {{ currentLang === 'ar' ? package.titleAr : package.titleEn }}
+        </h3>
+
+     <div class="package-body"
+     [innerHTML]="formatContent(currentLang === 'ar' ? package.contentAr : package.contentEn, currentLang)">
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
